@@ -5,12 +5,14 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/belone0/stack-trial/go/social/internal/store"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
 type application struct {
 	config config
+	store store.Storage
 }
 
 type config struct{
