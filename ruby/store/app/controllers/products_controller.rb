@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
     @product.destroy
     redirect_to products_path
@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.expect(product: [ :name ])
+      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
     end
-
 end
